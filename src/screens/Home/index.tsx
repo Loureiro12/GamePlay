@@ -70,20 +70,19 @@ export function Home() {
         setCategory={handleCategorySelect}
       />
 
-      <View style={styles.content}>
-        <ListHeaders title="Partidas agendadas" subtitle="Total 6" />
+      <ListHeaders title="Partidas agendadas" subtitle="Total 6" />
 
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Appointment data={item} onPress={handleAppointmentDetails} />
-          )}
-          ItemSeparatorComponent={() => <ListDivider />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+      <FlatList
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Appointment data={item} onPress={handleAppointmentDetails} />
+        )}
+        contentContainerStyle={{ paddingBottom: 69 }}
+        ItemSeparatorComponent={() => <ListDivider />}
+        style={styles.matches}
+        showsVerticalScrollIndicator={false}
+      />
     </Background>
   );
 }
